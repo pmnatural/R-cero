@@ -31,7 +31,7 @@ testeo
 coercion implicita y explicita
 cambio a otro tipo de datos
 
-###Estructuras de datos
+### Estructuras de datos
 Vectores
 Matrices
 Data.frames
