@@ -1,4 +1,4 @@
-### R cero
+# R cero
 
 Este taller consta de las siguientes partes
 
@@ -7,20 +7,23 @@ Este taller consta de las siguientes partes
 
 La primer partes estan basadas en  materiales de los talleres de Riva Quiroga y Laura Ación. Hay que venir al curso con R y RStudio instalado, y preferentemente haber leido sobre la interfase de RStudio.
 
-La segunda parte es el foco de este taller inicial que esta basado en el libro de Roger Peng xxx con materiales traducidos por Monica Alonso, en mini cursos que di en Azul y en Santiago del Estero años atras y testeados por Fabi Flores.  
+La segunda parte es el foco de este taller inicial que esta basado en el libro de Roger Peng "Exploratory Data Analysis with R"" con materiales traducidos por Monica Alonso, en mini cursos que di en Azul y en Santiago del Estero años atras y el testeo actual por Fabi Flores. 
+
+En otros talleres continuaremos viendo temas especificos y en especial estaremos trabajando conel bro de Hadley Wickham R for Data Science que esta disponible on line aqui 
 
 
-## Elementos de la sintaxis de R
+
+# Elementos de la sintaxis de R
 
 R es un leguaje orientado a objetos
 
-# Que es una clase
+## Que es una clase
 
-# Asignación y evaluación
+## Asignación y evaluación
 variables
 
-Tipos de objetos
-# Tipos de datos 
+## Tipos de objetos
+### Tipos de datos 
 character, numeric, integer, logical, otros
 Valores especiales pi inf -inf
 Valores faltantes NA NaN Null
@@ -28,8 +31,7 @@ testeo
 coercion implicita y explicita
 cambio a otro tipo de datos
 
-
-#Estructuras de datos
+###Estructuras de datos
 Vectores
 Matrices
 Data.frames
@@ -48,7 +50,7 @@ summary(iris)
 Indices
 Factores
 
-#Operadores
+### Operadores
 aritmeticos
 matematicos
 logicos
@@ -59,7 +61,7 @@ Operaciones vectorizadas
 reciclado de vectores
 reglas de reciclado
 
-#Funciones
+### Funciones
 base
 paquetes
 instalar paquetes y cargar librerias
