@@ -1,0 +1,93 @@
+---
+title: "La interfase de RStudio"
+author: "Priscilla Minotti"
+date: "11 de mayo de 2018"
+output: html_document
+---
+
+
+En el curso usaremos la última versión de R y RStudio, así que si tenés instalada una versión previa, puede que algunas cosas se vean un poco distintas.
+
+Si quedó todo bien instalado, cuando abras RStudio deberías ver algo que se parece a esto:
+
+Poner aqui la Figura anotada de interfase de RSTUDIO
+
+# La Consola
+La consola es la ventana de linea de comando o Command prompt
+
+La consola puede usarse como calculadora, 
+
+```{r}
+2+3
+```
+
+para guardar valores en variables y luego usar estas variables en algun calculo,
+```{r}
+radio<-22
+pi*radio
+
+diametro<-44
+diametro
+```
+para listar los objetos del directorio de trabajo,
+```{r}
+#ls()
+```
+etc.
+
+La Barra de Titulo de la Consola muestra el directorio de trabajo actual, puede interrumpir el trabajo de R y minimiza o maximiza la Consola en relación al panel Fuente (Source)
+
+En la consola se pueden Recuperar comandos anteriores usando la flecha Arriba (y Abajo) y haciendo Control+Arriba se presenta la lista de los ultimos comandos como para recorrerlos y elegir alguno.
+
+Ctrl+L limpia la consola
+
+# El panel Source o Fuente
+
+Alli es donde escribimos y documentamos nuestro codigo para guardarlo en un archivo y poder reproducidrlo y modificarlo segun sea necesario
+
+Autocompletado de código . 
+empezar a escribir (al menos 3 letras) + TAB 
+empezar a escribir Control + Arriba  da listado de instancias donde se uso ese codigo
+
+
+
+# El directorio de trabajo  wd 
+
+Es donde R va guardando los objetos que se van creando en una sesion de trabajo. 
+
+Se puede daber cual es la ubicacion que estamos usando como directorio de trabajo  mirando la barra de titulos de la consola. Por defecto es en Documentos del usuario (~/)
+
+Figura
+
+Pero si queremos usar esta ubicacion en una parte de un codigo, usamos desde la consola o en el script 
+```{r}
+getwd()
+```
+
+
+Si queremo cambiar de directorio de trabajo debemos dar la direccion del mismo
+
+
+```{r}
+#setwd("path_directorio) #reemplaza por el path al directorio de trabajo nuevo
+```
+
+Tambien lo podemos hacer desde el menu Session> Set Working Directory y veremos que luego la consola reproduce este pedido.
+
+
+Listas los archivos del directorio de trabajo de R con 
+```{r}
+dir()
+```
+
+Si queremos borrar el objeto d que creamos mas arriba, escribimos 
+```{r}
+rm(diametro)
+```
+
+
+
+Borras todos los objetos de R del directorio de trabajo con 
+rm(list = ls())
+
+
