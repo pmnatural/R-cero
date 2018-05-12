@@ -2,14 +2,12 @@
 
 Este taller consta de las siguientes partes
 
-*Instalacion de R y RStudio
-*La interfase de RStudio
-*Elementos de la sintaxis de R
-*Ejercicios
+*Instalacion de R y RStudio y la interfase de RStudio*
+*Elementos de la sintaxis de R con ejercicios*
 
-Las dos primeras partes estan basadas en  materiales de los talleres de Riva Quiroga y Laura Ación. Hay que venir al curso con R y RStudio instalado, y preferentemente haber leido sobre la interfase de RStudio.
+La primer partes estan basadas en  materiales de los talleres de Riva Quiroga y Laura Ación. Hay que venir al curso con R y RStudio instalado, y preferentemente haber leido sobre la interfase de RStudio.
 
-Las dos ultimas partes son el foco de este curs inicial y estan basadas en el libro de Roger Peng xxx con materiales traducidos por Monica Alonso, en mini cursos que di en Azul y en Santiago del Estero años atras y testeados por Fabi Flores.  
+La segunda parte es el foco de este taller inicial que esta basado en el libro de Roger Peng xxx con materiales traducidos por Monica Alonso, en mini cursos que di en Azul y en Santiago del Estero años atras y testeados por Fabi Flores.  
 
 
 ## Elementos de la sintaxis de R
