@@ -1,4 +1,5 @@
 # R-cero - Taller inicial de R - RLadies Buenos Aires
+### Priscilla G. Minotti
 _________
 ## Prerequisitos
 
@@ -15,7 +16,7 @@ _________
 
 _________
 ## ¿Cómo seguimos?
-En otros talleres continuaremos viendo temas especificos y empezaremos a usar un tipo de sintaxis más evolucionada, que se denomina *tidyverse*. En especial, estaremos trabajando con el libro de Hadley Wickham R for Data Science que esta disponible on line [aquí](http://r4ds.had.co.nz/) 
+En otros talleres continuaremos viendo temas especificos y empezaremos a usar un tipo de sintaxis más evolucionada, que se denomina *tidyverse*. En especial, estaremos trabajando con el libro de Hadley Wickham [R for Data Science] (http://r4ds.had.co.nz/). 
 
 Hay muchos cursos y materiales on-line. Mis preferidos son los de Software Carpentries, Datacamp, R-Bloggers y RStudio.
 
