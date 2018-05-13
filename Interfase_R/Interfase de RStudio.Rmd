@@ -1,14 +1,13 @@
 ---
-title: "La interfase de RStudio"
 author: "Priscilla Minotti"
-date: "11 de mayo de 2018"
-output: html_document
 ---
-
+# La interfase de RStudio
 
 En el curso usaremos la última versión de R y RStudio, así que si tenés instalada una versión previa, puede que algunas cosas se vean un poco distintas.
 
-Si quedó todo bien instalado, cuando abras RStudio deberías ver algo que se parece a esto:
+Si quedó todo bien instalado, cuando abras RStudio deberías ver algo asi:
+
+![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Interfase_RStudio.png)
 
 Poner aqui la Figura anotada de interfase de RSTUDIO
 
