@@ -3,14 +3,17 @@ author: "Priscilla Minotti"
 ---
 # La interfase de RStudio y guía de supervivencia de R
 
+R es una derivación o dialecto del lenguaje S (desarrollado ori para realizar analisis estadisticos). Es un lenguaje interpretado, orientado a objetos y sensible a las diferencias mayuscula-minuscula (case sensitive). Se pueden entrar instrucciones directamente en la consola o correr un conjunto desde un script, por lo que es util usar un entorno de desarrollo integrado o IDE que facilitar visualizar,escribir,  corregir, buscar referencias, etc. RStudio es la IDE que usamos en este taller y la de mayor uso con R.
+
 En el curso usaremos la última versión de R y RStudio, así que si tenés instalada una versión previa, puede que algunas cosas se vean un poco distintas.
 
 Si quedó todo bien instalado, cuando abras RStudio deberías ver una interfase gráfica con un menú superior, barra con herramientas debajo, y 4 ventanas, como ésta:
 
 ![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Interfase_RStudio.png)
 _________
-## La Consola
-La consola es la ventana de línea de comando o *Command prompt* donde se ejecuta R. Desde el prompt (se ve como >) podés entrar líneas de comando y al dar *Enter* se ejecuta de a una línea,  por vez. Así podemos usar la consola como calculadora. Probá tipeando esta suma o copiando y pegandola en la consola. ¿Cuanto te dió?
+# La Consola
+La consola es la ventana de línea de comando o *Command prompt* donde se ejecuta R. 
+En el prompt, dentro de la consola de R, vamos a encontrar un “>” allí es donde se escriben los comandos y al dar *Enter* se ejecuta de a una línea,  por vez. Así podemos usar la consola como calculadora. Probá tipeando esta suma o copiando y pegandola en la consola. ¿Cuanto te dió?
 ```{r}
 1+2+3+10+20+30
 ```
@@ -19,11 +22,44 @@ La Barra de Titulo de la Consola muestra el directorio de trabajo actual, puede 
 
 ![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Barra_Titulo_consolaRStudio.png)
 
-### El directorio de trabajo (workspace)
+## Asignación
 
-R es un lenguaje orientado a objetos. Todos son objetos en R: los datos, los operadores, las funciones. Hay objetos propios y reservados de R y otros que son creados por el usuario. El área de trabajo o directorio de trabajo (*wd*) es tu ambiente de trabajo actual, donde se van guardando todos los objetos que vayas creando en una sesión de trabajo. Por defecto es en *Documentos del usuario* (~/).  Se puede saber cuál es la ubicación que estamos usando como directorio de trabajo  mirando la barra de titulos de la consola. 
+Para definir una variable "X",  y asignarle poe ejemplo el valor 5,  se escribe la siguiente instrucción:
 
-Pero si queremos usar esta ubicacion en una parte de un codigo, usamos mejor este comando desde la consola o en el script. Probalo. 
+```{r asignacion}
+X <- 5
+```
+
+El símbolo <- indica una asignación. Lo que esta del lado izquierdo a este simbolo es el nombre de la variable, si no existía anteriormente, R la define, si ya existía la reemplaza. Del lado derecho al <- se escribe el valor que se le asignará a la variable. En nuestro caso, se definió la variable X que contiene el valor 5.
+
+![](C:/Users/M-C/Documents/R/Curso Monica Alonso/ojos.png) Complicado el símbolo para la asignación? En Rstudio se consigue con Alt + '-'. Probalo!!!
+
+La sintaxis del lenguaje R es la que determina si una sentencia está completa o no. Si escribis la sentencia incompleta en la consola, R cambia el prompt “>” por un “+”. La sentencia está incompleta. Pulsas la tecla “Esc” y listo! Controla siempre la sintaxis de las instrucciones que tipeás.
+
+En la consola se pueden Recuperar comandos anteriores usando la flecha Arriba (y Abajo) y haciendo Control+Arriba se presenta la lista de los ultimos comandos como para recorrerlos y elegir alguno.
+
+Ctrl+L limpia la consola
+
+## Auto-Print
+Si queremos saber el contenido de una variable podemos ingresar en la consola el nombre de la variable, y R nos va a mostrar el contenido. Volviendo a nuestro ejemplo, 
+
+```{r auto-print}
+X <- 5
+X
+```
+
+Como vemos aparece primero [1] que esta indicando un vector, y luego el 5 que indica el valor de la variable. No te aflijas, todavia no hablamos que es un vector, despues lo veremos. Lo importante es que nuestra variable X contiene un 5. 
+
+![](C:/Users/M-C/Documents/R/Curso Monica Alonso/ojos.png) R es case sensitive, quiere decir importa mucho si usas mayúscula o minúscula. Si en la asignación escribiste VariableX (con mayúscula) pero luego tipeás Variablex (con minúscula) te va a indicar que no conoce esa variable
+
+![](C:/Users/M-C/Documents/R/Curso Monica Alonso/Error Case Sensitive.png)   
+
+## El directorio de trabajo (workspace)
+
+R es un lenguaje orientado a objetos. Todos son objetos en R: los datos, los operadores, las funciones. Hay objetos propios y reservados de R y otros que son creados por el usuario, como la variable *x* que hiciste recién. El directorio o área de trabajo (*wd*) es tu ambiente de trabajo actual, donde se van guardando todos los objetos que vayas creando en una sesión de trabajo. Por defecto es en *Documentos del usuario* (~/).  
+
+![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Directorio_de_trabajo.png)
+Se puede saber cuál es la ubicación que estamos usando como directorio de trabajo  mirando la barra de titulos de la consola. Pero si queremos usar esta ubicación en una parte de un código, usamos este comando (también desde la desde la consola, probalo). 
 ```{r}
 getwd()
 ```
@@ -32,32 +68,37 @@ Si queremos cambiar de directorio de trabajo debemos dar la direccion del mismo.
 ```{r}
 #setwd("path_directorio") 
 ```
-Para que éste código funcione, tenés que reemplazar por el path al directorio de trabajo nuevo y sacar el "#" con el que comenté el código.
+Para que éste código funcione, tenés que reemplazar por el path al tu directorio de trabajo nuevo y sacar el "#" con el que está comentado el código.
 
-Tambien lo podemos hacer desde el menu *Session*, luego *Set Working Directory* y navegar hasta elegir la carpeta donde instalaremos nuestra nueva area de trabajo. Veremos que luego la consola reproduce este pedido. Al terminar una sesión de R se puede guardar una imagen del*wd* actual que se carga automaticamente la próxima vez que inicias R. Pero esto no es necesario, y tampoco es recomendable si éstas trabajando desde distintos directorios, ya que cuando se inicie R vas a estar buscando la última imagen del wd guardada, y si estaba en un disco externo, ni te cuento que se va a quedar buscando y no va a poder iniciar la sesión.
-
+También lo podemos hacer desde el menu *Session*, luego *Set Working Directory* y navegar hasta elegir la carpeta donde instalaremos nuestra nueva area de trabajo. Veremos que luego la consola reproduce este pedido. Al terminar una sesión de R se puede guardar una imagen del*wd* actual que se carga automaticamente la próxima vez que inicias R. Pero esto no es necesario, y tampoco es recomendable si éstas trabajando desde distintos directorios, ya que cuando se inicie R vas a estar buscando la última imagen del wd guardada, y si estaba en un disco externo, ni te cuento que se va a quedar buscando y no va a poder iniciar la sesión.
 
 Para *listar los objetos* del directorio de trabajo, tipeás:
 ```{r}
 #ls()
 ```
-Si es la primera vez que usas R, todavia no tenés nada, aunque en ese directorio puede haber físicamente otros archivos.
+Si es la primera vez que usas R, todavia no tenés nada, aunque en ese directorio puede haber físicamente otros archivos. Si venis siguiendo el taller, en el listado por lo menos tenés que tener el objeto *x*, la variable a la que asignaste el 5 más arriba.
 
 Si quisieras *borrar todos los objetos de R* del directorio de trabajo usas:
 ```{r}
 rm(list = ls())
 ```
 
+Si queres remover un objeto que creaste (ej *x*), haces 
+```{r}
+rm(objeto) #reemplazá con el nombre de algun objeto/variable creada por vos
+```
+
 Si querés listarlos archivos del directorio de trabajo, usas: 
 ```{r}
 dir()
 ```
-
-En la consola se pueden Recuperar comandos anteriores usando la flecha Arriba (y Abajo) y haciendo Control+Arriba se presenta la lista de los ultimos comandos como para recorrerlos y elegir alguno.
-
-Ctrl+L limpia la consola
 _________
-# El panel Source o Fuente
+# El Panel Entorno
+
+
+_________
+# El panel Archivos, Paquetes y Otros
+
 _________
 # El panel Source o Fuente
 
@@ -65,9 +106,9 @@ Alli es donde escribimos y documentamos nuestro código para guardarlo en un arc
 
 Para crear un nuevo archivo donde guardaremos un script de R lo hacemos desde la barra de herramientas:
 
-Poner figura
+![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/RStudio_Script_nuevo.png)
 
-A medida que lo vamos desarrollando lo guardamos con Crtl+S o desde la barra de herramientas. Un script de R se guarda con la terminación .R
+A medida que lo vamos desarrollando lo guardamos con Crtl+S o desde la barra de herramientas. Un script de R se guarda con la terminación .R ,
 
 En general 
 
@@ -76,8 +117,5 @@ Autocompletado de código .
 empezar a escribir (al menos 3 letras) + TAB 
 empezar a escribir Control + Arriba  da listado de instancias donde se uso ese codigo
 
-
-_________
-## La Consola
 
 

@@ -4,20 +4,11 @@ R es un leguaje orientado a objetos
 
 ## Que es una clase
 
-## AsignaciÃ³n y evaluaciÃ³n
-variables
-
-para guardar valores en variables y luego usar estas variables en algun calculo,
-
-```{r}
-radio<-22
-pi*radio
-
-diametro<-44
-diametro
-```
 
 ## Tipos de objetos
+
+Falta poner lo de Moni y las imagenes de mi curso en todo
+
 ### Tipos de datos 
 character, numeric, integer, logical, otros
 Valores especiales pi inf -inf
@@ -59,13 +50,11 @@ reglas de reciclado
 ### Funciones
 base
 paquetes
-instalar paquetes y cargar librerias
-pedir ayuda sobre paquetes y funciones
 
 funcion concatenar
 crear una funcion nueva
 
-llamar o importar datos tabulares
+llamar o importar datos tabulares (ejercio con el cvs de chicas en tecnologia)
 estadisticas simples
 ordenar
 graficos simples
