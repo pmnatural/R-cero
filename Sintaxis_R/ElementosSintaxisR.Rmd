@@ -7,6 +7,16 @@ R es un leguaje orientado a objetos
 ## AsignaciÃ³n y evaluaciÃ³n
 variables
 
+para guardar valores en variables y luego usar estas variables en algun calculo,
+
+```{r}
+radio<-22
+pi*radio
+
+diametro<-44
+diametro
+```
+
 ## Tipos de objetos
 ### Tipos de datos 
 character, numeric, integer, logical, otros

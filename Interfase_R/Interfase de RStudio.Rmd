@@ -1,92 +1,83 @@
 ---
 author: "Priscilla Minotti"
 ---
-# La interfase de RStudio
+# La interfase de RStudio y guía de supervivencia de R
 
 En el curso usaremos la última versión de R y RStudio, así que si tenés instalada una versión previa, puede que algunas cosas se vean un poco distintas.
 
-Si quedó todo bien instalado, cuando abras RStudio deberías ver algo asi:
+Si quedó todo bien instalado, cuando abras RStudio deberías ver una interfase gráfica con un menú superior, barra con herramientas debajo, y 4 ventanas, como ésta:
 
 ![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Interfase_RStudio.png)
-
-Poner aqui la Figura anotada de interfase de RSTUDIO
-
-# La Consola
-La consola es la ventana de linea de comando o Command prompt
-
-La consola puede usarse como calculadora, 
-
+_________
+## La Consola
+La consola es la ventana de línea de comando o *Command prompt* donde se ejecuta R. Desde el prompt (se ve como >) podés entrar líneas de comando y al dar *Enter* se ejecuta de a una línea,  por vez. Así podemos usar la consola como calculadora. Probá tipeando esta suma o copiando y pegandola en la consola. ¿Cuanto te dió?
 ```{r}
-2+3
+1+2+3+10+20+30
 ```
 
-para guardar valores en variables y luego usar estas variables en algun calculo,
-```{r}
-radio<-22
-pi*radio
+La Barra de Titulo de la Consola muestra el directorio de trabajo actual, puede interrumpir el trabajo de R y minimiza o maximiza la Consola en relación al panel Fuente (Source)
 
-diametro<-44
-diametro
+![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Barra_Titulo_consolaRStudio.png)
+
+### El directorio de trabajo (workspace)
+
+R es un lenguaje orientado a objetos. Todos son objetos en R: los datos, los operadores, las funciones. Hay objetos propios y reservados de R y otros que son creados por el usuario. El área de trabajo o directorio de trabajo (*wd*) es tu ambiente de trabajo actual, donde se van guardando todos los objetos que vayas creando en una sesión de trabajo. Por defecto es en *Documentos del usuario* (~/).  Se puede saber cuál es la ubicación que estamos usando como directorio de trabajo  mirando la barra de titulos de la consola. 
+
+Pero si queremos usar esta ubicacion en una parte de un codigo, usamos mejor este comando desde la consola o en el script. Probalo. 
+```{r}
+getwd()
 ```
-para listar los objetos del directorio de trabajo,
+
+Si queremos cambiar de directorio de trabajo debemos dar la direccion del mismo.
+```{r}
+#setwd("path_directorio") 
+```
+Para que éste código funcione, tenés que reemplazar por el path al directorio de trabajo nuevo y sacar el "#" con el que comenté el código.
+
+Tambien lo podemos hacer desde el menu *Session*, luego *Set Working Directory* y navegar hasta elegir la carpeta donde instalaremos nuestra nueva area de trabajo. Veremos que luego la consola reproduce este pedido. Al terminar una sesión de R se puede guardar una imagen del*wd* actual que se carga automaticamente la próxima vez que inicias R. Pero esto no es necesario, y tampoco es recomendable si éstas trabajando desde distintos directorios, ya que cuando se inicie R vas a estar buscando la última imagen del wd guardada, y si estaba en un disco externo, ni te cuento que se va a quedar buscando y no va a poder iniciar la sesión.
+
+
+Para *listar los objetos* del directorio de trabajo, tipeás:
 ```{r}
 #ls()
 ```
-etc.
+Si es la primera vez que usas R, todavia no tenés nada, aunque en ese directorio puede haber físicamente otros archivos.
 
-La Barra de Titulo de la Consola muestra el directorio de trabajo actual, puede interrumpir el trabajo de R y minimiza o maximiza la Consola en relación al panel Fuente (Source)
+Si quisieras *borrar todos los objetos de R* del directorio de trabajo usas:
+```{r}
+rm(list = ls())
+```
+
+Si querés listarlos archivos del directorio de trabajo, usas: 
+```{r}
+dir()
+```
 
 En la consola se pueden Recuperar comandos anteriores usando la flecha Arriba (y Abajo) y haciendo Control+Arriba se presenta la lista de los ultimos comandos como para recorrerlos y elegir alguno.
 
 Ctrl+L limpia la consola
-
+_________
+# El panel Source o Fuente
+_________
 # El panel Source o Fuente
 
-Alli es donde escribimos y documentamos nuestro codigo para guardarlo en un archivo y poder reproducidrlo y modificarlo segun sea necesario
+Alli es donde escribimos y documentamos nuestro código para guardarlo en un archivo y poder reproducirlo y modificarlo según sea necesario.
+
+Para crear un nuevo archivo donde guardaremos un script de R lo hacemos desde la barra de herramientas:
+
+Poner figura
+
+A medida que lo vamos desarrollando lo guardamos con Crtl+S o desde la barra de herramientas. Un script de R se guarda con la terminación .R
+
+En general 
+
 
 Autocompletado de código . 
 empezar a escribir (al menos 3 letras) + TAB 
 empezar a escribir Control + Arriba  da listado de instancias donde se uso ese codigo
 
 
-
-# El directorio de trabajo  wd 
-
-Es donde R va guardando los objetos que se van creando en una sesion de trabajo. 
-
-Se puede daber cual es la ubicacion que estamos usando como directorio de trabajo  mirando la barra de titulos de la consola. Por defecto es en Documentos del usuario (~/)
-
-Figura
-
-Pero si queremos usar esta ubicacion en una parte de un codigo, usamos desde la consola o en el script 
-```{r}
-getwd()
-```
-
-
-Si queremo cambiar de directorio de trabajo debemos dar la direccion del mismo
-
-
-```{r}
-#setwd("path_directorio) #reemplaza por el path al directorio de trabajo nuevo
-```
-
-Tambien lo podemos hacer desde el menu Session> Set Working Directory y veremos que luego la consola reproduce este pedido.
-
-
-Listas los archivos del directorio de trabajo de R con 
-```{r}
-dir()
-```
-
-Si queremos borrar el objeto d que creamos mas arriba, escribimos 
-```{r}
-rm(diametro)
-```
-
-
-
-Borras todos los objetos de R del directorio de trabajo con 
-rm(list = ls())
+_________
+## La Consola
 
 
