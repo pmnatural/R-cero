@@ -57,7 +57,8 @@ En la consola se pueden Recuperar comandos anteriores usando la flecha Arriba (y
 
 Ctrl+L limpia la consola
 _________
-# El panel Source o Fuente
+# El panel Archivos, Paquetes y Otros
+
 _________
 # El panel Source o Fuente
 
@@ -78,6 +79,6 @@ empezar a escribir Control + Arriba  da listado de instancias donde se uso ese c
 
 
 _________
-## La Consola
+# El Panel Entorno
 
 
