@@ -1,0 +1,64 @@
+# Elementos de la sintaxis de R
+
+R es un leguaje orientado a objetos
+
+## Que es una clase
+
+## AsignaciÃ³n y evaluaciÃ³n
+variables
+
+## Tipos de objetos
+### Tipos de datos 
+character, numeric, integer, logical, otros
+Valores especiales pi inf -inf
+Valores faltantes NA NaN Null
+testeo
+coercion implicita y explicita
+cambio a otro tipo de datos
+
+### Estructuras de datos
+Vectores
+Matrices
+Data.frames
+Listas
+
+Coercion
+Atributos
+
+class(iris)
+dim(iris)
+names(iris)
+str(iris)
+attributes(iris)
+summary(iris)
+
+Indices
+Factores
+
+### Operadores
+aritmeticos
+matematicos
+logicos
+relacionales
+otros
+
+Operaciones vectorizadas
+reciclado de vectores
+reglas de reciclado
+
+### Funciones
+base
+paquetes
+instalar paquetes y cargar librerias
+pedir ayuda sobre paquetes y funciones
+
+funcion concatenar
+crear una funcion nueva
+
+llamar o importar datos tabulares
+estadisticas simples
+ordenar
+graficos simples
+exportar datos
+
+
