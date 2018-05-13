@@ -19,4 +19,4 @@ En otros talleres continuaremos viendo temas especificos y empezaremos a usar un
 
 Hay muchos cursos y materiales on-line. Mis preferidos son los de Software Carpentries, Datacamp, R-Bloggers y RStudio.
 
-
+_________
