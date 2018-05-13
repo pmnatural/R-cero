@@ -18,7 +18,7 @@ En el prompt, dentro de la consola de R, vamos a encontrar un “>” allí es d
 1+2+3+10+20+30
 ```
 
-La Barra de Titulo de la Consola muestra el directorio de trabajo actual, puede interrumpir el trabajo de R y minimiza o maximiza la Consola en relación al panel Fuente (Source)
+La Barra de Titulo de la Consola muestra el directorio de trabajo actual (1), puede interrumpir el trabajo de R (2)y minimiza o maximiza la Consola en relación al panel Fuente (3).
 
 ![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Barra_Titulo_consolaRStudio.png)
 
@@ -50,7 +50,9 @@ X
 
 Como vemos aparece primero [1] que esta indicando un vector, y luego el 5 que indica el valor de la variable. No te aflijas, todavia no hablamos que es un vector, despues lo veremos. Lo importante es que nuestra variable X contiene un 5. 
 
-![](C:/Users/M-C/Documents/R/Curso Monica Alonso/ojos.png) R es case sensitive, quiere decir importa mucho si usas mayúscula o minúscula. Si en la asignación escribiste VariableX (con mayúscula) pero luego tipeás Variablex (con minúscula) te va a indicar que no conoce esa variable
+*Falta poner las imagenes de moni en la carpeta imagenes asi corrijo el path*
+
+![](C:/Users/M-C/Documents/R/Curso Monica Alonso/ojos.png) R es case sensitive, quiere decir que importa mucho si usas mayúscula o minúscula. Si en la asignación escribiste VariableX (con mayúscula) pero luego tipeás Variablex (con minúscula) te va a indicar que no conoce esa variable
 
 ![](C:/Users/M-C/Documents/R/Curso Monica Alonso/Error Case Sensitive.png)   
 
@@ -59,45 +61,51 @@ Como vemos aparece primero [1] que esta indicando un vector, y luego el 5 que in
 R es un lenguaje orientado a objetos. Todos son objetos en R: los datos, los operadores, las funciones. Hay objetos propios y reservados de R y otros que son creados por el usuario, como la variable *x* que hiciste recién. El directorio o área de trabajo (*wd*) es tu ambiente de trabajo actual, donde se van guardando todos los objetos que vayas creando en una sesión de trabajo. Por defecto es en *Documentos del usuario* (~/).  
 
 ![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Directorio_de_trabajo.png)
-Se puede saber cuál es la ubicación que estamos usando como directorio de trabajo  mirando la barra de titulos de la consola. Pero si queremos usar esta ubicación en una parte de un código, usamos este comando (también desde la desde la consola, probalo). 
+Se puede saber cuál es la ubicación que estamos usando como directorio de trabajo  mirando la barra de titulos de la consola. 
+
+Pero como probablemente quieras tener proyectos en directorios físicos distintos, es bueno conocer algunas instrucciones básicas para gestionar los directorios o espacios de trabajo.
+El "#" se usa para comentar el código, esto significa que todo lo que sige al # no se ejecuta.
+
 ```{r}
-getwd()
+getwd() #dónde esta el directorio actual, donde estoy trabajando
+
+setwd("path_mi_dir") #cambia de lugar el ws a mi_dir
+
+setwd("c:/docs/mi_dir") #en windows, ojo que se usa / en vez de \  
+setwd("/usr/rob/mi_dir") #en linux
 ```
 
-Si queremos cambiar de directorio de trabajo debemos dar la direccion del mismo.
-```{r}
-#setwd("path_directorio") 
-```
-Para que éste código funcione, tenés que reemplazar por el path al tu directorio de trabajo nuevo y sacar el "#" con el que está comentado el código.
+También lo podemos hacer desde el menu *Session*, luego *Set Working Directory* y navegar hasta elegir la carpeta donde instalaremos nuestra nueva area de trabajo. Veremos que luego la consola reproduce este pedido. 
 
-También lo podemos hacer desde el menu *Session*, luego *Set Working Directory* y navegar hasta elegir la carpeta donde instalaremos nuestra nueva area de trabajo. Veremos que luego la consola reproduce este pedido. Al terminar una sesión de R se puede guardar una imagen del*wd* actual que se carga automaticamente la próxima vez que inicias R. Pero esto no es necesario, y tampoco es recomendable si éstas trabajando desde distintos directorios, ya que cuando se inicie R vas a estar buscando la última imagen del wd guardada, y si estaba en un disco externo, ni te cuento que se va a quedar buscando y no va a poder iniciar la sesión.
-
-Para *listar los objetos* del directorio de trabajo, tipeás:
 ```{r}
-#ls()
-```
-Si es la primera vez que usas R, todavia no tenés nada, aunque en ese directorio puede haber físicamente otros archivos. Si venis siguiendo el taller, en el listado por lo menos tenés que tener el objeto *x*, la variable a la que asignaste el 5 más arriba.
+ls() #lista los objetos que creaste en el ws
 
-Si quisieras *borrar todos los objetos de R* del directorio de trabajo usas:
-```{r}
-rm(list = ls())
+dir() # lista los archivos del directorio, pero no los objetos!
 ```
 
-Si queres remover un objeto que creaste (ej *x*), haces 
+Si es la primera vez que usas R, todavia no tenés nada, aunque en ese directorio puede haber físicamente otros archivos. Si venis siguiendo el taller, en el listado de objetos por lo menos tenés que tener el objeto *x*, la variable a la que asignaste el 5 más arriba. Los objetos tambien se pueden ver en el Panel con la pestaña Environment, que lo contamos más adelante.
+
+Para borrar objetos (no archivos) de tu ws:
+
 ```{r}
-rm(objeto) #reemplazá con el nombre de algun objeto/variable creada por vos
+rm(nombre_objeto) #remueve el objeto especificado
+rm(list = ls()) #borra todos los objetos de R de tu ws 
 ```
 
-Si querés listarlos archivos del directorio de trabajo, usas: 
-```{r}
-dir()
-```
+Al terminar una sesión de R se puede guardar una imagen del*wd* actual que se carga automaticamente la próxima vez que inicias R. Pero esto no es necesario, y tampoco es recomendable si éstas trabajando desde distintos directorios, ya que cuando se inicie R vas a estar buscando la última imagen del wd guardada, y si estaba en un disco externo, ni te cuento que se va a quedar buscando y no va a poder iniciar la sesión. Por eso es preferible trabajar dentro de un proyecto, ya que se guarda todo junto, el ws, los objetos creados y tambien tus datos. Pero eso es para otro taller.
+
 _________
 # El Panel Entorno
 
+Es el panel que tiene las pestañas Environment, History y tambien puede aparecerte otras. 
+
+En la pestaña *Environment* podes ver los objetos creados con un minidetalle de su estructura y rango de valores. Tambien te deja importar datasets y tambien visualizarlos abriendo una pestaña nueva en el panel donde vas desarrollando el codigo.
+
+En la pestaña *History* te aparece la lista de todos los comandos ejecutados durante la sesión o proyecto en marcha.
 
 _________
 # El panel Archivos, Paquetes y Otros
+
 
 _________
 # El panel Source o Fuente
