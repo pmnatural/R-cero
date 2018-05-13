@@ -1,6 +1,3 @@
----
-author: "Priscilla Minotti"
----
 # La interfase de RStudio y guía de supervivencia de R
 
 R es una derivación o dialecto del lenguaje S (desarrollado ori para realizar analisis estadisticos). Es un lenguaje interpretado, orientado a objetos y sensible a las diferencias mayuscula-minuscula (case sensitive). Se pueden entrar instrucciones directamente en la consola o correr un conjunto desde un script, por lo que es util usar un entorno de desarrollo integrado o IDE que facilitar visualizar,escribir,  corregir, buscar referencias, etc. RStudio es la IDE que usamos en este taller y la de mayor uso con R.
@@ -18,7 +15,7 @@ En el prompt, dentro de la consola de R, vamos a encontrar un “>” allí es d
 1+2+3+10+20+30
 ```
 
-La Barra de Titulo de la Consola muestra el directorio de trabajo actual, puede interrumpir el trabajo de R y minimiza o maximiza la Consola en relación al panel Fuente (Source)
+La Barra de Titulo de la Consola muestra el directorio de trabajo actual (1), puede interrumpir el trabajo de R (2)y minimiza o maximiza la Consola en relación al panel Fuente (3).
 
 ![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Barra_Titulo_consolaRStudio.png)
 
@@ -50,7 +47,9 @@ X
 
 Como vemos aparece primero [1] que esta indicando un vector, y luego el 5 que indica el valor de la variable. No te aflijas, todavia no hablamos que es un vector, despues lo veremos. Lo importante es que nuestra variable X contiene un 5. 
 
-![](C:/Users/M-C/Documents/R/Curso Monica Alonso/ojos.png) R es case sensitive, quiere decir importa mucho si usas mayúscula o minúscula. Si en la asignación escribiste VariableX (con mayúscula) pero luego tipeás Variablex (con minúscula) te va a indicar que no conoce esa variable
+*Falta poner las imagenes de moni en la carpeta imagenes asi corrijo el path*
+
+![](C:/Users/M-C/Documents/R/Curso Monica Alonso/ojos.png) R es case sensitive, quiere decir que importa mucho si usas mayúscula o minúscula. Si en la asignación escribiste VariableX (con mayúscula) pero luego tipeás Variablex (con minúscula) te va a indicar que no conoce esa variable
 
 ![](C:/Users/M-C/Documents/R/Curso Monica Alonso/Error Case Sensitive.png)   
 
@@ -59,46 +58,87 @@ Como vemos aparece primero [1] que esta indicando un vector, y luego el 5 que in
 R es un lenguaje orientado a objetos. Todos son objetos en R: los datos, los operadores, las funciones. Hay objetos propios y reservados de R y otros que son creados por el usuario, como la variable *x* que hiciste recién. El directorio o área de trabajo (*wd*) es tu ambiente de trabajo actual, donde se van guardando todos los objetos que vayas creando en una sesión de trabajo. Por defecto es en *Documentos del usuario* (~/).  
 
 ![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Directorio_de_trabajo.png)
-Se puede saber cuál es la ubicación que estamos usando como directorio de trabajo  mirando la barra de titulos de la consola. Pero si queremos usar esta ubicación en una parte de un código, usamos este comando (también desde la desde la consola, probalo). 
+Se puede saber cuál es la ubicación que estamos usando como directorio de trabajo  mirando la barra de titulos de la consola. 
+
+Pero como probablemente quieras tener proyectos en directorios físicos distintos, es bueno conocer algunas instrucciones básicas para gestionar los directorios o espacios de trabajo.
+El "#" se usa para comentar el código, esto significa que todo lo que sige al # no se ejecuta.
+
 ```{r}
-getwd()
+getwd() #dónde esta el directorio actual, donde estoy trabajando
+
+setwd("path_mi_dir") #cambia de lugar el ws a mi_dir
+
+setwd("c:/docs/mi_dir") #en windows, ojo que se usa / en vez de \  
+setwd("/usr/rob/mi_dir") #en linux
 ```
 
-Si queremos cambiar de directorio de trabajo debemos dar la direccion del mismo.
-```{r}
-#setwd("path_directorio") 
-```
-Para que éste código funcione, tenés que reemplazar por el path al tu directorio de trabajo nuevo y sacar el "#" con el que está comentado el código.
+También lo podemos hacer desde el menu *Session*, luego *Set Working Directory* y navegar hasta elegir la carpeta donde instalaremos nuestra nueva area de trabajo. Veremos que luego la consola reproduce este pedido. 
 
-También lo podemos hacer desde el menu *Session*, luego *Set Working Directory* y navegar hasta elegir la carpeta donde instalaremos nuestra nueva area de trabajo. Veremos que luego la consola reproduce este pedido. Al terminar una sesión de R se puede guardar una imagen del*wd* actual que se carga automaticamente la próxima vez que inicias R. Pero esto no es necesario, y tampoco es recomendable si éstas trabajando desde distintos directorios, ya que cuando se inicie R vas a estar buscando la última imagen del wd guardada, y si estaba en un disco externo, ni te cuento que se va a quedar buscando y no va a poder iniciar la sesión.
-
-Para *listar los objetos* del directorio de trabajo, tipeás:
 ```{r}
-#ls()
-```
-Si es la primera vez que usas R, todavia no tenés nada, aunque en ese directorio puede haber físicamente otros archivos. Si venis siguiendo el taller, en el listado por lo menos tenés que tener el objeto *x*, la variable a la que asignaste el 5 más arriba.
+ls() #lista los objetos que creaste en el ws
 
-Si quisieras *borrar todos los objetos de R* del directorio de trabajo usas:
-```{r}
-rm(list = ls())
+dir() # lista los archivos del directorio, pero no los objetos!
 ```
 
-Si queres remover un objeto que creaste (ej *x*), haces 
+Si es la primera vez que usas R, todavia no tenés nada, aunque en ese directorio puede haber físicamente otros archivos. Si venis siguiendo el taller, en el listado de objetos por lo menos tenés que tener el objeto *x*, la variable a la que asignaste el 5 más arriba. Los objetos tambien se pueden ver en el Panel con la pestaña Environment, que lo contamos más adelante.
+
+Para borrar objetos (no archivos) de tu ws:
+
 ```{r}
-rm(objeto) #reemplazá con el nombre de algun objeto/variable creada por vos
+rm(nombre_objeto) #remueve el objeto especificado
+
+rm(list = ls()) #borra todos los objetos de R de tu ws 
 ```
 
-Si querés listarlos archivos del directorio de trabajo, usas: 
-```{r}
-dir()
-```
+Al terminar una sesión de R se puede guardar una imagen del*wd* actual que se carga automaticamente la próxima vez que inicias R. Pero esto no es necesario, y tampoco es recomendable si éstas trabajando desde distintos directorios, ya que cuando se inicie R vas a estar buscando la última imagen del wd guardada (.RData), y si estaba en un disco externo, ni te cuento que se va a quedar buscando y no va a poder iniciar la sesión. Por eso es preferible trabajar dentro de un proyecto, ya que se guarda todo junto, el ws, los objetos creados y tambien tus datos. Pero eso es para otro taller.
+
 _________
 # El Panel Entorno
 
+Es el panel que tiene las pestañas Environment, History y tambien puede aparecerte otras. 
+
+En la pestaña *Environment* podes ver los objetos creados con un minidetalle de su estructura y rango de valores. Tambien te deja importar datasets y tambien visualizarlos abriendo una pestaña nueva en el panel donde vas desarrollando el codigo.
+
+En la pestaña *History* te aparece la lista de todos los comandos ejecutados durante la sesión o proyecto en marcha.
 
 _________
-# El panel Archivos, Paquetes y Otros
+# El panel Archivos, Paquetes, Ayuda y Otros
 
+## Archivos
+La pestaña *Files* nos muestra los archivos guardados en el ws y tambien gestionar archivos o navegar por otros directorios sin tener que salir de RStudio.
+
+## Paquetes
+
+Los paquetes o *packages* son colecciones de funciones, datos y codigo compilado de R en un formato definido. El directorio donde se guardan los paquetes se llama libreria. R viene con un conjunto estandar de paquetes y se pueden agregar paquetes adicionales que se descargan e instalan. Una vez que estan instalados deben ser cargados en la sesión en la que van a ser usados  
+
+La pestaña *Packages* nos muestra los paquetes instalados, los que trajo R estan en *System Library*, los que instalados por el usuario (nosotros) en *User Library*. Si estan tildados es que esa librería ya esta cargada y sus funciones y datos estan disponibels para usar en la sesion actual.
+
+![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Package_Tab.png)
+Desde esa pestaña se pueden gestionar los paquetes, como por ejemplo instalar un paquete que no teniamos o actualizar todos los paquetes a su version mas corriente. Tambien se pueden instalar paquetes desde el menú *Tools* .
+
+![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/RStudio_InstalarPaq_Tools.png)
+Pero tambien pueden instalarse desde la consola con la instrucción
+```{r}
+install.packages("paquete") # poner el nombre del paquete 
+```
+Los paquetes quedan instalados para usar otras veces, pero para disponer de las funciones o datos en la sesion es necesario accederlas con  
+
+```{r}
+library(paquete) # poner el nombre del paquete
+```
+
+## Ayuda
+
+Hay muchas frma de pedir ayuda en R y los resultados de ese pedido aparecen en la pestaña *Help*. Las principales instrucciones son las siguientes:
+
+```{r}
+help.start()   # ayuda general
+help(foo)      # ayuda sobre la función *foo*
+?foo           # ayuda sobre la función *foo*g 
+apropos("foo") # lista todas las funciones con foo en el nombre 
+example(foo)   # muestra un ejemplo de la funcion foo 
+```
+vigenettes ???
 _________
 # El panel Source o Fuente
 
@@ -110,7 +150,7 @@ Para crear un nuevo archivo donde guardaremos un script de R lo hacemos desde la
 
 A medida que lo vamos desarrollando lo guardamos con Crtl+S o desde la barra de herramientas. Un script de R se guarda con la terminación .R ,
 
-En general 
+bla bla bla
 
 
 Autocompletado de código . 
