@@ -64,11 +64,10 @@ Pero como probablemente quieras tener proyectos en directorios físicos distinto
 El "#" se usa para comentar el código, esto significa que todo lo que sige al # no se ejecuta.
 
 ```{r}
-getwd() #dónde esta el directorio actual, donde estoy trabajando
+getwd() #dónde esta el directorio actual
 
 setwd("path_mi_dir") #cambia de lugar el ws a mi_dir
-
-setwd("c:/docs/mi_dir") #en windows, ojo que se usa / en vez de \  
+setwd("c:/docs/mi_dir") #en windows se usa / en vez de \  
 setwd("/usr/rob/mi_dir") #en linux
 ```
 
@@ -120,17 +119,54 @@ Desde esa pestaña se pueden gestionar los paquetes, como por ejemplo instalar u
 Pero tambien pueden instalarse desde la consola con la instrucción
 ```{r}
 install.packages("paquete") # poner el nombre del paquete 
-```
-Los paquetes quedan instalados para usar otras veces, pero para disponer de las funciones o datos en la sesion es necesario accederlas con  
+=======
 
+setwd("path_mi_dir") #cambia de lugar el ws a mi_dir
+
+setwd("c:/docs/mi_dir") #en windows, ojo que se usa / en vez de \  
+setwd("/usr/rob/mi_dir") #en linux
+```
+
+También lo podemos hacer desde el menu *Session*, luego *Set Working Directory* y navegar hasta elegir la carpeta donde instalaremos nuestra nueva area de trabajo. Veremos que luego la consola reproduce este pedido. 
+
+```{r}
+ls() #lista los objetos que creaste en el ws
+
+dir() # lista los archivos del directorio, pero no los objetos
+```
+
+Los paquetes quedan instalados para usar otras veces, pero para disponer de las funciones o datos en la sesion es necesario accederlas con la instruccion:
 ```{r}
 library(paquete) # poner el nombre del paquete
 ```
 
+
 ## Ayuda
+=======
+Si es la primera vez que usas R, todavia no tenés nada, aunque en ese directorio puede haber físicamente otros archivos. Si venis siguiendo el taller, en el listado de objetos por lo menos tenés que tener el objeto *x*, la variable a la que asignaste el 5 más arriba. Los objetos tambien se pueden ver en el Panel con la pestaña Environment, que lo contamos más adelante.
+
+Para borrar objetos (no archivos) de tu ws:
+
+```{r}
+rm(nombre_objeto) #remueve el objeto especificado
+rm(list = ls()) #borra todos los objetos de R de tu ws 
+```
+
+Al terminar una sesión de R se puede guardar una imagen del*wd* actual que se carga automaticamente la próxima vez que inicias R. Pero esto no es necesario, y tampoco es recomendable si éstas trabajando desde distintos directorios, ya que cuando se inicie R vas a estar buscando la última imagen del wd guardada, y si estaba en un disco externo, ni te cuento que se va a quedar buscando y no va a poder iniciar la sesión. Por eso es preferible trabajar dentro de un proyecto, ya que se guarda todo junto, el ws, los objetos creados y tambien tus datos. Pero eso es para otro taller.
+
+_________
+# El Panel Entorno
+
+Es el panel que tiene las pestañas Environment, History y tambien puede aparecerte otras. 
+
+En la pestaña *Environment* podes ver los objetos creados con un minidetalle de su estructura y rango de valores. Tambien te deja importar datasets y tambien visualizarlos abriendo una pestaña nueva en el panel donde vas desarrollando el codigo.
+
+En la pestaña *History* te aparece la lista de todos los comandos ejecutados durante la sesión o proyecto en marcha.
+>>>>>>> 2e89d5a61aa0ebf62bcc7840502ee19b2b76fcde
 
 Hay muchas frma de pedir ayuda en R y los resultados de ese pedido aparecen en la pestaña *Help*. Las principales instrucciones son las siguientes:
 
+<<<<<<< HEAD
 ```{r}
 help.start()   # ayuda general
 help(foo)      # ayuda sobre la función *foo*
@@ -139,6 +175,9 @@ apropos("foo") # lista todas las funciones con foo en el nombre
 example(foo)   # muestra un ejemplo de la funcion foo 
 ```
 vigenettes ???
+=======
+
+>>>>>>> 2e89d5a61aa0ebf62bcc7840502ee19b2b76fcde
 _________
 # El panel Source o Fuente
 
