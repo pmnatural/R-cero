@@ -6,7 +6,7 @@ En el curso usaremos la última versión de R y RStudio, así que si tenés inst
 
 Si quedó todo bien instalado, cuando abras RStudio deberías ver una interfase gráfica con un menú superior, barra con herramientas debajo, y 4 ventanas, como ésta:
 
-![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Interfase_RStudio.png)
+![Interfase RStudio](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Interfase_RStudio.png)
 _________
 # La Consola
 La consola es la ventana de línea de comando o *Command prompt* donde se ejecuta R. 
@@ -29,7 +29,7 @@ X <- 5
 
 El símbolo <- indica una asignación. Lo que esta del lado izquierdo a este simbolo es el nombre de la variable, si no existía anteriormente, R la define, si ya existía la reemplaza. Del lado derecho al <- se escribe el valor que se le asignará a la variable. En nuestro caso, se definió la variable X que contiene el valor 5.
 
-![](C:/Users/M-C/Documents/R/Curso Monica Alonso/ojos.png) Complicado el símbolo para la asignación? En Rstudio se consigue con Alt + '-'. Probalo!!!
+![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/ojo.png) Complicado el símbolo para la asignación? En Rstudio se consigue con Alt + '-'. Probalo!!!
 
 La sintaxis del lenguaje R es la que determina si una sentencia está completa o no. Si escribis la sentencia incompleta en la consola, R cambia el prompt “>” por un “+”. La sentencia está incompleta. Pulsas la tecla “Esc” y listo! Controla siempre la sintaxis de las instrucciones que tipeás.
 
@@ -51,7 +51,7 @@ Como vemos aparece primero [1] que esta indicando un vector, y luego el 5 que in
 
 ![](C:/Users/M-C/Documents/R/Curso Monica Alonso/ojos.png) R es case sensitive, quiere decir que importa mucho si usas mayúscula o minúscula. Si en la asignación escribiste VariableX (con mayúscula) pero luego tipeás Variablex (con minúscula) te va a indicar que no conoce esa variable
 
-![](C:/Users/M-C/Documents/R/Curso Monica Alonso/Error Case Sensitive.png)   
+![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/error.png)    
 
 ## El directorio de trabajo (workspace)
 
