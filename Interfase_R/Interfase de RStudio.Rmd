@@ -1,6 +1,6 @@
 # La interfase de RStudio y guía de supervivencia de R
 
-R es una derivación o dialecto del lenguaje S (desarrollado ori para realizar analisis estadisticos). Es un lenguaje interpretado, orientado a objetos y sensible a las diferencias mayuscula-minuscula (case sensitive). Se pueden entrar instrucciones directamente en la consola o correr un conjunto desde un script, por lo que es util usar un entorno de desarrollo integrado o IDE que facilitar visualizar,escribir,  corregir, buscar referencias, etc. RStudio es la IDE que usamos en este taller y la de mayor uso con R.
+R es una derivación o dialecto del lenguaje S (desarrollado originalmente para realizar análisis estadísticos). Es un lenguaje interpretado, orientado a objetos y sensible a las diferencias mayúscula-minúscula (*case sensitive*). Se pueden entrar instrucciones directamente en la consola o correr un conjunto desde un script, por lo que es util usar un entorno de desarrollo integrado o IDE que facilitar visualizar,escribir,  corregir, buscar referencias, etc. RStudio es la IDE que usamos en este taller y la de mayor uso con R.
 
 En el curso usaremos la última versión de R y RStudio, así que si tenés instalada una versión previa, puede que algunas cosas se vean un poco distintas.
 
@@ -169,5 +169,5 @@ _________
 
 Hay mucho mas sobre esto pero ya es mejor ir aprendiéndo sobre la marcha.
 
-Continuamos [aquí][(https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/ElementosSintaxisR.Rmd) con elementos de la gramática básica de R. 
+Continuamos [aquí](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/ElementosSintaxisR.Rmd) con elementos de la gramática básica de R. 
 
