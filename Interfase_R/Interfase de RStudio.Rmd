@@ -149,7 +149,7 @@ A medida que lo vamos desarrollando lo guardamos con Crtl+S o desde la barra de 
 
 Las librerias que se van a usar las cargamos siempre al inicio del script.
 
-Para comentar el codigo usamos *#*
+Para comentar el codigo usamos *#*. R no soporta comentarios multi-lineas o bloques de comentario.
 
 Trabajando desde RStudio hay varias ayudas para facilitar el desarrollo de tu código como 
 
