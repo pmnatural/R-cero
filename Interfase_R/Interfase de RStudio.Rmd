@@ -49,7 +49,7 @@ Como vemos aparece primero [1] que esta indicando un vector, y luego el 5 que in
 
 *Falta poner las imagenes de moni en la carpeta imagenes asi corrijo el path*
 
-![](C:/Users/M-C/Documents/R/Curso Monica Alonso/ojos.png) R es case sensitive, quiere decir que importa mucho si usas mayúscula o minúscula. Si en la asignación escribiste VariableX (con mayúscula) pero luego tipeás Variablex (con minúscula) te va a indicar que no conoce esa variable
+![ojos](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/ojo.png)R es case sensitive, quiere decir que importa mucho si usas mayúscula o minúscula. Si en la asignación escribiste VariableX (con mayúscula) pero luego tipeás Variablex (con minúscula) te va a indicar que no conoce esa variable
 
 ![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/error.png)    
 
