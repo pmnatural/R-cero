@@ -44,10 +44,7 @@ Si queremos saber el contenido de una variable podemos ingresar en la consola el
 X <- 5
 X
 ```
-
 Como vemos aparece primero [1] que esta indicando un vector, y luego el 5 que indica el valor de la variable. No te aflijas, todavia no hablamos que es un vector, despues lo veremos. Lo importante es que nuestra variable X contiene un 5. 
-
-*Falta poner las imagenes de moni en la carpeta imagenes asi corrijo el path*
 
 ![ojos](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/ojo.png)R es case sensitive, quiere decir que importa mucho si usas mayúscula o minúscula. Si en la asignación escribiste VariableX (con mayúscula) pero luego tipeás Variablex (con minúscula) te va a indicar que no conoce esa variable
 
