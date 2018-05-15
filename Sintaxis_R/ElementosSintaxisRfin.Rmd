@@ -335,7 +335,7 @@ Los atributos de un objeto, si tiene, se pueden conocer usando la función attri
 attributes(iris) #iris es un dataset incluído en R
 ```
 
-imagen de iris
+![dataframe](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/Imagenes/RIris.png)
 
 #Factor
 
