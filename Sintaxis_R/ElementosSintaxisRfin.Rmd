@@ -15,7 +15,13 @@ Los principales objetos de la sintaxis de R son los siguientes:
 * Operadores
 * Funciones
 
-![objetos](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/Imagenes/Basico.png)
+Ejemplo 1
+
+![objetos1](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/Imagenes/Objetos1.png)
+
+Ejemplo 2
+
+![objetos2](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/Imagenes/Objetos2.png)
 _________
 # Tipos de datos 
 character, numeric, integer, logical, otros
