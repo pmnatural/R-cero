@@ -14,7 +14,7 @@ Los principales objetos de la sintaxis de R son los siguientes:
 > Funciones
 
 ![clase](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/Imagenes/Basico.png)
-
+_________
 # Tipos de datos 
 character, numeric, integer, logical, otros
 Valores especiales pi inf -inf
@@ -93,7 +93,7 @@ class(var1)
 
 is.na() se usa para testear si los objetos son NA
 is.nan() se usan para testear por NaN
-
+_________
 # Estructuras de datos
 
 Otro tipo de objetos son las estructuras de datos, tambien llamados objetos datos, que son organizaciones de datos que quedan como objetos internos a R. Las principales estruturas de datos internas con las que trabajamos son las siguientes
@@ -103,7 +103,7 @@ Otro tipo de objetos son las estructuras de datos, tambien llamados objetos dato
 * List
 * Data.frame
 
-> Vector 
+## Vector 
 
 El vector es el tipo de objeto básico de R. Es un conjunto de datos del mismo tipo ordenado en una dimension.El vector tiene sólo objetos de una misma clase.Pueden contener 1 o más de un elementos, genéricamente N elementos. 
 
@@ -170,10 +170,10 @@ as.complex(z)
 ## [1] NA NA NA
 ```
 
-¿Cómo extraer elementos de un vector segun su posición?
-> x[i]   i es un índice que se usar para denominar el i-esimo elemento del objeto x
-> x[ih:n]   se puede usar un vector de números contiguos generados por el operador ":"
-> x[c(i,j,n)]   se puede usar un vector armado con la concatenación de posiciones no contiguas
+>¿Cómo extraer elementos de un vector segun su posición?
+x[i]   i es un índice que se usar para denominar el i-esimo elemento del objeto x
+x[ih:n]   se puede usar un vector de números contiguos generados por el operador ":"
+x[c(i,j,n)]   se puede usar un vector armado con la concatenación de posiciones no contiguas
 
 Probemos
 ```{r}
@@ -184,8 +184,7 @@ x[2:3]           #pedimos del segundo al tercer elemento
 x[c(2,4)]        #pedimos el segundo y el cuarto elemento 
 ```
 
-
-> Matrix
+## Matrix
 
 Un matriz es un conjunto de datos del mismo tipo, ordenado en dos dimensiones. O sea que es un conjuntos de vectores. 
 Un vector es de dimension 1 con longitud N mientras que una matriz  tiene dos dimensiones, de longitudes N x M. Este atributo dimensión es en sí mismo un vector de enteros de longitud 2 (número de filas y numero de columnas).
@@ -254,7 +253,7 @@ rbind(x, y)
 
 ![cbindrbind](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/Imagenes/Rcbindrbind.png)
 
->List
+## List
 
 Una lista es un conjunto de datos ordenado de distinto tipo, que pueden ser a su vez ser de distinto tamaño.
 
@@ -280,7 +279,7 @@ x
 ```
 
 
-> Data.frame
+## Data.frame
 
 Se usan para almacenar datos tabulares en R. Tienen estructura con filas y columnas. Todas las columnas tienen el mismo numero de filas. Cada columna tiene datos del mismo tipo. Distintos a las matrices, los data frames pueden almacenar diferente clases de objetos en cada columna. Quiere decir, la columna A puede ser de un tipo de datos y la columna B de otro tipo. Es el equivalente de una tabla relacional.
 
@@ -306,7 +305,7 @@ ncol(x)
 
 ```
 
-#Atributos
+# Atributos
 > Algunos atributos de objetos R son: 
 -	Names, dimnames
 -	Dimensions
@@ -337,7 +336,7 @@ attributes(iris) #iris es un dataset incluído en R
 
 ![dataframe](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/Imagenes/RIris.png)
 
-#Factor
+## Factor
 
 Es un vector para almacenar datos que tiene un numero determinado de categorías. Se puede pensar el factor como un vector de enteros donde cada entero tiene una etiqueta (label). Los factores son importantes en modelos estadísticos ya que definen los estratos o grupos a comparar o difernciar y se usan especialmente en funciones que generan modelos como lm() y glm(). 
 
@@ -370,16 +369,16 @@ La variables ordinales tienen un orden intrínseco o ranking Las variables de da
 
 Para controlar el orden en valores no numéricos, se necesita usar ordered y levels
 
-
-Indices
-
+_________
 # Operadores
+
 Los operadores son tipos de funciones especiales,
 
 R permite usar expresiones aritméticas. Las operaciones pueden ser agrupadas usando paréntesis, y asignadas a variables de manera directa.
 Hay operadores aritmeticos, logicos, relacionales y muchos otros. Ejemplos de operadores:
 
->operadores aritmeticos
+## Operadores aritmeticos
+
 Operador   | Descripción	      
 -----------|------------------  
     +      |  adición         
@@ -388,9 +387,10 @@ Operador   | Descripción
     /      |  división 
  ^ o **    |  exponenciación
 
-> Operadores lógicos
+## Operadores lógicos
+
 Operador   | Descripción	      
------------|------------------  
+-----------|----------------------  
     <      |  menor que         
     <=     |  menor o igual que    
     >      |  mayor que 
@@ -418,8 +418,8 @@ Por ejemplor si tratamos de sumar c(1, 2, 3) a un vector de 6 elementos, en real
 
 Si una operacion aritmetica involucra un vector de longitud cero, entonces el vector resultante tamben tendra longitud cero.
 
-
-### Funciones
+_________
+# Funciones
 
 Una funcion es un conjunto de instrucciones para realizar una tarea especifica; puede aceptar argumentos o parametros; puede devolver uno o mas valores o ninguno.Casi todo lo que hacemos en R es usando funciones. Usamos tanto las funciones que trae R preinstaladas como las que agregamos al cargar paquetes.
 
@@ -428,22 +428,24 @@ Constan de :
 * codigo (body)
 * entorno  en el cual son válidas las variables que se crean y usan para realizar la accion de la funcion
 
-Una función nueva se crea mediante la siguiente construcción:
+Una función nueva se crea mediante la siguiente construcción generica:
 
-function (arglist) {body}
+```{r}
+function(arglist){body}
+```
 
-Dentro de los {} va el codigo que define el cuerpo de la funcion. 
+Dentro de los {} va el codigo que define el cuerpo de la función. 
 
-En R usamos muchas funciones que ya vienen listas en los paquetes, y lo unico que tenemos que preocuparnos es de pasarle los argumentos correctos (arglist) y en usar o almacenar el valor que devuelva.
+En R usamos muchas funciones que ya vienen listas en los paquetes,  lo único que tenemos que preocuparnos es de pasarle los argumentos correctos (arglist) y en usar o almacenar el valor que devuelva.
 
-*summary*: funcion para contar cantidad de ocurrencias en cada categoria
-Por ejemplo aplicado a vector de caracteres: 
+*summary* es una funcion muy util para describir un dataset de manera resumida 
+Por ejemplo, aplicado a un vector de caracteres: 
 ```{r}
 v <- c("j", "k", "l")
 summary(v)
 ```
 
-Si lo usamos con el dataset *iris*
+Si lo usamos con el dataset *iris* que tiene datos numéricos
 ```{r}
 summary(iris)
 ```

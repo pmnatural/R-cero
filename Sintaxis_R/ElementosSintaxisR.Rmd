@@ -1,4 +1,0 @@
-# Elementos de la sintaxis de R
-
-
-
