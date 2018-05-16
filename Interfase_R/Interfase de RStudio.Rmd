@@ -166,5 +166,5 @@ _________
 
 Hay mucho mas sobre esto pero ya es mejor ir aprendiéndo sobre la marcha.
 
-Continuamos [aquí](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/ElementosSintaxisR.Rmd) con elementos de la gramática básica de R. 
+Continuamos [aquí](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/ElementosSintaxisRfin.Rmd) con elementos de la gramática básica de R. 
 
