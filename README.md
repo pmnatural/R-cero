@@ -17,7 +17,7 @@ _________
 
 [Esta sección](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/ElementosSintaxisR.Rmd) presenta la sintaxis básica y los principales objetos de R.  
 
-Está basada en el libro de Roger Peng "Exploratory Data Analysis with R" con materiales traducidos por la RLady-BA Monica Alonso, la *cheatsheet* de [R Base](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf) de Mhari McNeill, la *cheatsheet* de Frans Van Dunné [Domar datos con R](https://www.rstudio.com/wp-content/uploads/2015/03/data-wrangling-spanish.pdf), en mini cursos que di años atrás y la revisióon de la RLady-BA Fabi Flores. 
+Está basada en el libro de Roger Peng "Exploratory Data Analysis with R" con materiales traducidos por la RLady-BA Monica Alonso, la *cheatsheet* de [R Base](http://github.com/rstudio/cheatsheets/raw/master/base-r.pdf) de Mhari McNeill, la *cheatsheet* de Frans Van Dunné [Domar datos con R](https://www.rstudio.com/wp-content/uploads/2015/03/data-wrangling-spanish.pdf), en mini cursos que di años atrás y la revisión de la RLady-BA Fabi Flores. 
 
 _________
 ## ¿Cómo seguimos?
