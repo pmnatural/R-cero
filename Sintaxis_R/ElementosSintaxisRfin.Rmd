@@ -2,18 +2,20 @@
 
 R es un leguaje orientado a objetos. 
 Un **objeto** es una ubicación de memoria con un valor y con un identificador para poder accederlo. Los objetos tienen propiedades o estados (*atributos*) y comportamientos (*métodos*) característicos.
+
 Las clases se utilizan para crear objetos, que son instancias de una clase dada. Una **clase** es un diseño de la estructura que tiene un objeto: atributos y métodos. La clase describe las propiedades y comportamiento común a todos los objetos de la misma clase. 
 
 ![clase](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/Imagenes/clase.png)
+
 Los principales objetos de la sintaxis de R son los siguientes:
 
-> Asignación y Evaluación 
-> Tipos de datos
-> Estructuras de datos
-> Operadores
-> Funciones
+* Asignación y Evaluación 
+* Tipos de datos
+* Estructuras de datos
+* Operadores
+* Funciones
 
-![clase](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/Imagenes/Basico.png)
+![objetos](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/Imagenes/Basico.png)
 _________
 # Tipos de datos 
 character, numeric, integer, logical, otros
