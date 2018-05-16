@@ -32,19 +32,19 @@ cambio a otro tipo de datos
 *	Otros : ej Complex (números complejos), date and time
 
 
-> Caracter
+## Caracter
 
 Son datos de texto, como letras o cadenas de letras (strings).Se pueden ordenar alfabeticamente. Se usan como valores en variables categoricas o nominales. En general R los interpreta como factores o estratos para agrupar o resumir. 
 
-> Integer
+## Integer
 
 Son los números enteros. Sirven también para indizar u ordenar numericamente.También pueden usarse como factores o niveles. Los indices y los factores los veremos despues de las estructuras de datos.
 
-> Numeric
+## Numeric
 
 Son los números reales, es decir con decimales. Los números son tratados en R generalmente como objetos de clase *numeric*. Esto significa que aunque un número se vea como 1 ó 2 en R, que podemos pensar que son enteros, están representados internamente como 1.0000 o 2.0000. En general no es importante, pero hay veces que sí lo es.Si se quiere explícitamente un número entero, se debe especificar el sufijo L.  Entonces, si asignamos 1 como valor a una variable, R lo toma como objeto numérico, pero 1L lo define explícitamente como un objeto entero.
 
-> Valores especiales
+## Valores especiales
 
 Hay valores numéricos especiales como por ejemplo *pi* que permite no tener que escribir todos los decimales o *Inf* que representa infinito.Esto permite representar entidades como
 ```{r}
@@ -63,7 +63,7 @@ Tambien hay valores especiales para indicar situaciones sin valores. NULL inform
 Los valores NA tienen asociada una clase que indica el tipo de dato, quiere decir que hay NA enteros, NA de tipo caracter, etc.
 Un valor NaN es también NA pero no al revés.
 
->Logical
+## Logical
 
 Los valores lógicos o Booleanos son TRUE y FALSE. En general se crean al hacer comparaciones entre variables.   via comparison between variables.
 T y F son el modo abreviado de especificar TRUE y FALSE (verdadero y falso). Aunque, en general conviene tratar de escribirlos de forma explícita (TRUE y FALSE), para indicar que son valores lógicos y no generar ambigüedades (podrian ser interpretados como las letras T y F).
