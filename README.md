@@ -1,5 +1,5 @@
 # R-cero - Taller inicial de R - RLadies Buenos Aires
-### Priscilla G. Minotti
+### Priscilla G. Minotti _ Monica Alonso
 _________
 ## Prerequisitos
 
