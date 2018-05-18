@@ -481,6 +481,7 @@ summary(iris)
 
 Que ejemplos de funciones vimos hasta ahora?
 
+
 Ahora unos [ejercicios] (https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/R0_Ejercicios1.html)
 
 
