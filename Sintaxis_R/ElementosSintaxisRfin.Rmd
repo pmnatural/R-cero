@@ -467,17 +467,29 @@ Dentro de los {} va el codigo que define el cuerpo de la función.
 
 En R usamos muchas funciones que ya vienen listas en los paquetes,  lo único que tenemos que preocuparnos es de pasarle los argumentos correctos (arglist) y en usar o almacenar el valor que devuelva.
 
-*summary* es una funcion muy util para describir un dataset de manera resumida 
-Por ejemplo, aplicado a un vector de caracteres: 
+*head()* nos da las primeras filas de una dataset, por defecto las 6 primeras. Veamos con el dataset Iris
+
+```{r}
+head(iris)
+```
+
+*summary* es una funcion muy util para describir un dataset de manera resumida. Por ejemplo, aplicado a un vector de caracteres: 
 ```{r}
 v <- c("j", "k", "l")
 summary(v)
 ```
 
-Si lo usamos con el dataset *iris* que tiene datos numéricos y viene ya con R 
+Si lo usamos con el dataset *iris* que tiene datos numéricos 
 ```{r}
 summary(iris)
 ```
+
+Otra funcion importante para ver como es la estructura de un dataset es str(). Lo probamos tambien con iris.
+
+```{r}
+str(iris)
+```
+
 
 Que ejemplos de funciones vimos hasta ahora?
 
