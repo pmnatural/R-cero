@@ -479,8 +479,9 @@ Si lo usamos con el dataset *iris* que tiene datos numéricos y viene ya con R
 summary(iris)
 ```
 
-
 Que ejemplos de funciones vimos hasta ahora?
+
+Ahora unos [ejercicios] ((https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/R0_Ejercicios1.html)) 
 
 
 La definición completa del lenguaje R la podemos encontrar [aquí](
