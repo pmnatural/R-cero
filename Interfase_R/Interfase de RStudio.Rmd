@@ -55,6 +55,7 @@ Como vemos aparece primero [1] que esta indicando un vector, y luego el 5 que in
 R es un lenguaje orientado a objetos. Todos son objetos en R: los datos, los operadores, las funciones. Hay objetos propios y reservados de R y otros que son creados por el usuario, como la variable *x* que hiciste recién. El directorio o área de trabajo (*wd*) es tu ambiente de trabajo actual, donde se van guardando todos los objetos que vayas creando en una sesión de trabajo. Por defecto es en *Documentos del usuario* (~/).  
 
 ![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Directorio_de_trabajo.png)
+
 Se puede saber cuál es la ubicación que estamos usando como directorio de trabajo  mirando la barra de titulos de la consola. 
 
 Pero como probablemente quieras tener proyectos en directorios físicos distintos, es bueno conocer algunas instrucciones básicas para gestionar los directorios o espacios de trabajo.
@@ -100,6 +101,7 @@ _________
 # El panel Archivos, Paquetes, Ayuda y Otros
 
 ## Archivos
+
 La pestaña *Files* nos muestra los archivos guardados en el ws y tambien gestionar archivos o navegar por otros directorios sin tener que salir de RStudio.
 
 ## Paquetes
@@ -109,12 +111,18 @@ Los paquetes o *packages* son colecciones de funciones, datos y codigo compilado
 La pestaña *Packages* nos muestra los paquetes instalados, los que trajo R estan en *System Library*, los que instalados por el usuario en *User Library*. Si estan tildados es que esa librería ya esta cargada y sus funciones y datos estan disponibels para usar en la sesion actual.
 
 ![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/Package_Tab.png)
+
 Desde esa pestaña se pueden gestionar los paquetes, como por ejemplo instalar un paquete que no teniamos o actualizar todos los paquetes a su version mas corriente. Tambien se pueden instalar paquetes desde el menú *Tools* .
 
 ![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/RStudio_InstalarPaq_Tools.png)
+
 Pero tambien pueden instalarse desde la consola con la instrucción
 ```{r}
 install.packages("paquete") # poner el nombre del paquete 
+```
+Como ejemplo instalaremos "tidyverse" que es un paquete que engloba en un conjunto de paquetes (hay que descomentar).
+```{r}
+#install.packages("tidyverse")
 ```
 
 También lo podemos hacer desde el menu *Session*, luego *Set Working Directory* y navegar hasta elegir la carpeta donde instalaremos nuestra nueva area de trabajo. Veremos que luego la consola reproduce este pedido. 
@@ -123,6 +131,13 @@ Los paquetes quedan instalados para usar otras veces, pero para disponer de las 
 ```{r}
 library(paquete) # poner el nombre del paquete
 ```
+Para el ejemplo seria
+```{r}
+#library(tidyverse)
+```
+A veces algunas funciones tienen el mismo nombre de otras que ya estan instaladas en R base, entonces R resuelve el conflicto enmascarando las viejas (mask) y poniendo en la lista de búsqueda a las nuevas. 
+
+![](https://github.com/pmnatural/R-cero/blob/master/Interfase_R/Imagenes/RLibraryConflicts.PNG)
 
 
 ## Ayuda

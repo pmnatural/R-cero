@@ -24,12 +24,6 @@ Ejemplo 2
 ![objetos2](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/Imagenes/Objetos2.png)
 _________
 # Tipos de datos 
-character, numeric, integer, logical, otros
-Valores especiales pi inf -inf
-Valores faltantes NA NaN Null
-testeo
-coercion implicita y explicita
-cambio a otro tipo de datos
 
 > Los **tipos de datos** básicos son:  
 
@@ -37,7 +31,7 @@ cambio a otro tipo de datos
 * Integer (enteros)
 * Numeric (reales con doble precisión)
 * Logical (lógicos: True / False)
-*	Otros : ej Complex (números complejos), date and time
+*	Otros ej.: complex (números complejos), date (sólo fecha) time (fecha y hora)
 
 
 ## Caracter
@@ -56,11 +50,11 @@ Son los números reales, es decir con decimales. Los números son tratados en R 
 
 Hay valores numéricos especiales como por ejemplo *pi* que permite no tener que escribir todos los decimales o *Inf* que representa infinito.Esto permite representar entidades como
 ```{r}
-1 / 0.
+1/0.
 ```
 De esta manera, Inf se puede usar en cálculos como:
 ```{r}
-1 / Inf
+1/Inf
 ```
 
 Tambien hay valores especiales para indicar situaciones sin valores. NULL informa que esta vacío. NA  quiere decir “not available” y se usa como valor faltante (Missing Value). El valor NaN representa el valor indefinido (“not a number”), por ejemplo al hacer 0 / 0. 
@@ -73,7 +67,7 @@ Un valor NaN es también NA pero no al revés.
 
 ## Logical
 
-Los valores lógicos o Booleanos son TRUE y FALSE. En general se crean al hacer comparaciones entre variables.   via comparison between variables.
+Los valores lógicos o Booleanos son TRUE y FALSE. En general se crean al hacer comparaciones entre variables. 
 T y F son el modo abreviado de especificar TRUE y FALSE (verdadero y falso). Aunque, en general conviene tratar de escribirlos de forma explícita (TRUE y FALSE), para indicar que son valores lógicos y no generar ambigüedades (podrian ser interpretados como las letras T y F).
 
 _________
@@ -102,6 +96,7 @@ class(var1)
 
 is.na() se usa para testear si los objetos son NA
 is.nan() se usan para testear por NaN
+
 _________
 # Estructuras de datos
 
@@ -146,6 +141,8 @@ length(n)
 class(n)
 ```
 
+### Coerción
+
 Cuando se crea un vector con datos mixtos, como el vector por definicion contiene un solo tipo de datos, R hace coerción implícita, para llevar todos los valores al mismo tipo de datos. Estos vectores, que tipo de datos tienen? (usar la funcion class() para averiguarlo)
 ```{r}
 X <- c(1.7, "a")
@@ -180,10 +177,11 @@ as.complex(z)
 ## [1] NA NA NA
 ```
 
->¿Cómo extraer elementos de un vector segun su posición?
->x[i]   i es un índice que se usar para denominar el i-esimo elemento del objeto x
->x[ih:n]   se puede usar un vector de números contiguos generados por el operador ":"
->x[c(i,j,n)]   se puede usar un vector armado con la concatenación de posiciones no contiguas
+### Extracción de elementos de un vector segun su posición
+>¿Cómo extraer elementos de un vector ?
+* x[i]   i es un índice que se usar para denominar el i-esimo elemento del objeto x
+* x[ih:n]   se puede usar un vector de números contiguos generados por el operador ":"
+* x[c(i,j,n)]   se puede usar un vector armado con la concatenación de posiciones no contiguas
 
 Probemos
 ```{r}
@@ -300,11 +298,12 @@ x
 Se usan para almacenar datos tabulares en R. Tienen estructura con filas y columnas. Todas las columnas tienen el mismo numero de filas. Cada columna tiene datos del mismo tipo. Distintos a las matrices, los data frames pueden almacenar diferente clases de objetos en cada columna. Quiere decir, la columna A puede ser de un tipo de datos y la columna B de otro tipo. Es el equivalente de una tabla relacional.
 
 ![dataframe](https://github.com/pmnatural/R-cero/blob/master/Sintaxis_R/Imagenes/RDataframe.png)
+
 Podemos considerarlo como un caso especial de lista. Es una lista de vectores y/o matrices que tiene todos la misma longitud (mismo numero de elementos para un vector, o mismo numero de filas para una matriz).
 
 En general los data frames se crean leyendo un archivo, usando las funciones read.table() o read.csv(). También se puede crear con la función data.frame() o puede convertirse desde otro tipo de datos, como listas. Un data frame se puede convertir en una matriz usando la función data.matrix().
 
-Cn nrow() pedimos el numero de filas o casos y con ncol() el numero de columnas o variables.
+Con nrow() pedimos el numero de filas o casos y con ncol() el numero de columnas o variables.
 
 ```{r}
 x <- data.frame(alum = 1:4, bar = c(T, T, F, F))
@@ -322,27 +321,29 @@ ncol(x)
 ```
 
 # Atributos
+
+
+Todoslos objectos en R pueden tener atributos que ayuden a describir que es lo que hay en el objeto. 
+
 > Algunos atributos de objetos R son: 
 -	Names, dimnames
 -	Dimensions
 -	Clase
 -	Longitud
--	Otros atributos/metadata definidos por el usuario.
-
-Todoslos objectos en R pueden tener atributos que ayuden a describir que es lo que hay en el objeto. 
+-	Otros atributos/metadata definidos por el usuario
 
 Uno de los atributos mas utiles de los objetos estructura de datos de R son los **nombres**, que son muy  útiles para escribir código fácil de leer y generar objetos auto-descriptivos. 
 
 names() permite asignar nombres a cada elemento de un vector o a las dimensiones de una lista.
-En un data.frame se usan en cambio names y rownames
-Los nombres de filas y de columnas de una matriz se pueden definir de forma separada usando las funciones colnames() y rownames().
 
-Object     | Set column names	|	Set row names 
------------|------------------|---------------
+En un data.frame se usan en cambio names y rownames. Los nombres de filas y de columnas de una matriz se pueden definir de forma separada usando las funciones colnames() y rownames().
+
+Objeto    | Set nombres col	|	Set nombres filas 
+-----------|------------------|------------------
 Data frame |     names()      |  row.names()  
 Matrix     |    colnames()    |  rownames()  
 
-Atributos como las dimensiones tambien son importante ya que pueden modificar el comportamiento de los objetos, como puede ser al transformar un vector en una matriz.
+Atributos como las dimensiones tambien son importantes ya que pueden modificar el comportamiento de los objetos, como puede ser al transformar un vector en una matriz.
 
 Los atributos de un objeto, si tiene, se pueden conocer usando la función attributes().  No todos los objetos contienen atributos, en esos casos la función attributes() devolverá NULL.
 
@@ -434,6 +435,18 @@ Por ejemplor si tratamos de sumar c(1, 2, 3) a un vector de 6 elementos, en real
 
 Si una operacion aritmetica involucra un vector de longitud cero, entonces el vector resultante tamben tendra longitud cero.
 
+Una funcion muy util para crear vectores haciendo repeticiones con la función rep(), que usa reciclado de vectores.
+
+```{r}
+rep(1:4, 2)
+rep(1:4, each = 2)       # no es igual al primero
+rep(1:4, c(2,2,2,2))     # igual al segundo
+rep(1:4, c(2,1,2,1))
+rep(1:4, each = 2, len = 4)    # longitud es 4!
+rep(1:4, each = 2, times = 3)  # longitud 4, 3 repeticiones completas 
+```
+
+
 _________
 # Funciones
 
@@ -461,13 +474,13 @@ v <- c("j", "k", "l")
 summary(v)
 ```
 
-Si lo usamos con el dataset *iris* que tiene datos numéricos
+Si lo usamos con el dataset *iris* que tiene datos numéricos y viene ya con R 
 ```{r}
 summary(iris)
 ```
 
-Que ejemplos de funciones vimos hasta ahora?
 
+Que ejemplos de funciones vimos hasta ahora?
 
 
 La definición completa del lenguaje R la podemos encontrar [aquí](
@@ -475,11 +488,5 @@ https://cran.r-project.org/doc/manuals/r-release/R-lang.html)
 
 
 
-
-llamar o importar datos tabulares (ejercio con el cvs de chicas en tecnologia)
-estadisticas simples
-ordenar
-graficos simples
-exportar datos
 
 
